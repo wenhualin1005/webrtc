@@ -1,0 +1,125 @@
+webrtc demo:
+modules_tests
+modules_unittests
+rtc_unittests
+peerconnection_client
+peerconnection_server
+peerconnection_unittests
+
+
+peerconnection_client:
+main
+  wnd.Create();
+	g_signal_connect(window_, "key-press-event", G_CALLBACK(OnKeyPressCallback),
+		OnKeyPressCallback
+			OnKeyPress
+				OnClicked
+					StartLogin
+						client_->Connect(server, port, GetPeerName());
+							DoConnect
+								InitSocketSignals();
+									PeerConnectionClient::OnClose
+									PeerConnectionClient::OnConnect
+									PeerConnectionClient::OnRead
+								ConnectControlSocket
+									control_socket_->Connect(server_address_);
+									PeerConnectionClient::OnConnect
+
+	
+
+	
+	InitSocketSignals
+		OnRead
+		OnHangingGetRead
+			OnPeerConnected
+				SwitchToPeerList
+					OnRowActivatedCallback
+						OnRowActivated
+							ConnectToPeer
+								InitializePeerConnection
+									CreatePeerConnectionFactory
+										CreateBuiltinAudioEncoderFactory
+										CreateBuiltinAudioDecoderFactory
+									AddTracks
+								CreateOffer
+				
+				
+				
+				
+  RTC_LOG(INFO) << __FUNCTION__;
+  
+  
+  
+  
+PeerConnection server
+
+main
+	listener.Create()
+	select(FD_SETSIZE, &socket_set, NULL, NULL, &timeout)
+		if IsPeerConnection
+		member || PeerChannel::IsPeerConnection(s)
+		
+				clients.AddMember(s) //sign_in
+					  BroadcastChangedState(*new_guy, &failures);
+					  HandleDeliveryFailures(&failures);
+					  members_.push_back(new_guy);
+				//500 Error
+			else
+				ForwardRequestToPeer
+				//sign_out
+				//500 Error
+		HandleBrowserRequest
+					
+  
+  
+/////////////////////////////////////////////////////////////////
+// A. 第一台client连接服务器
+1. MainWnd::OnDefaultAction里面接收用户单击“connect"的事件
+2. 委托给回调Conductor::StartLogin执行连接操作
+3. Conductor::StartLogin里再命令PeerConnectionClient::Connect执行连接操作
+在该函数里，若服务器地址未解析，需要先解析，然后才开始连接
+4(optional). 当需要解析时，若PeerConnectionClient::OnResolveResult解析成功，才继续执行 
+5. 当解析成功，调用PeerConnectionClient::DoConnect执行连接操作, 该函数对socket做一些相关的初始化工作
+6. 当相关的初始化工作完成后，调用PeerConnectionClient::ConnectControlSocket来向server发送连接命令
+7. 若连接成功，则回调PeerConnectionClient::OnConnect被调用, 这里发送/sign_in数据包
+8. // A1 -- 服务器执行相关的处理工作
+9. peer在PeerConnectionClient::OnRead里接收到其他peer的数据包，并确定自己登录成功，并使用hanging_get_开始连接server
+10. 连接成功后，在PeerConnectionClient::OnHangingGetConnect里面向服务器发送/wait请求
+11. // A2 -- server接收到新登录的peer的/wait请求时，不做任何处理
+
+
+/////////////////////////////////////////////////////////////////////
+// A1. 服务器处理client的/sgin_in请求
+1. main的while循环监听套接字被触发，调用accept获取和该peer通信的socket，
+并将该socket加入到socket数组中，然后发送其他peer的信息给新连接的peer
+
+
+/////////////////////////////////////////////////////////////////////
+// A2. 服务器处理client的/wait请求
+1. 当server在main的while里面接收到client的/wait请求时，它不做任何处理
+2. while循环接收到该peer的"/sign_in?hwh@Mountain-hooray"请求。
+
+
+/////////////////////////////////////////////////////////////////
+// B. 非第一台client连接服务器
+1. 这个过程和第一台client连接服务器的情况类似
+
+
+/////////////////////////////////////////////////////////////////
+// C. 当peer A请求与peer B通话时
+// peer A部分
+1. 用户在MainWnd::OnDefaultAction里触发通话命令
+2. 其在回调Conductor::ConnectToPeer里执行相关连接工作
+该回调会调用InitializePeerConnection执行一些初始化工作并用CreateOffer创建发送端，设置Conductor为回调类
+3. 当Conductor创建Offer成功后, 回调Conductor::OnSuccess被调用, 该函数里面构建一个json的sdp数据发送给server(类型为offer)
+4. // C1 -- 服务器处理peer的请求和另一端聊天的数据
+// peer B部分
+5. PeerConnectionClient::OnHangingGetRead会收到服务器传来的开启视频会话的命令
+6. PeerConnectionClient::OnMessageFromPeer里面继续处理
+7. 交给其回调Conductor::OnMessageFromPeer来处理
+ 
+
+
+/////////////////////////////////////////////////////////////////
+// C1
+1. 在main的while循环里面, server把"peer A请求向peer B进行通话的消息"发送给peer B

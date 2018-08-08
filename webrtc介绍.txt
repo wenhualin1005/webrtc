@@ -1,0 +1,222 @@
+p2p
+STUN
+
+STUN的全称是Simple Traversal of UDP Through NAT，即UDP对NAT的简单穿越方式。应用程序（即STUN CLIENT）向NAT外的STUN SERVER通过UDP发送请求STUN 消息询问自身的转换后地址，STUN SERVER收到请求消息，产生响应消息，响应消息中携带请求消息的源端口，即STUN CLIENT在NAT上对应的外部端口。然后响应消息通过NAT发送给STUN CLIENT，STUN CLIENT通过响应消息体中的内容得知其在NAT上对应的外部地址，并且将其填入以后呼叫协议的UDP负载中，告知对端，同时还可以在终端注册时直接注册这个转换后的公有IP地址，这样就解决了H.323/MGCP/SIP穿越NAT的通信建立问题以及作为被叫时的问题。本端的接收地址和端口号为NAT外的地址和端口号。由于通过STUN协议已在NAT上预先建立媒体流的NAT映射表项，故媒体流可顺利穿越NAT。
+需要注意的是，NAT/PAT对于地址转换关系是有一定生命期的，某个地址转换后在一段时间内没有被使用将会被清除，当这个业务流再次出现时，将会建立一个新的地址转换关系，这就意味着STUN的询问过程以及终端的注册过程都需要再执行一遍才能保证通信的正确。解决这个问题一个比较通行的方案是采用某种方式保持NAT/PAT的转换关系，例如在NAT/PAT生命期内重复注册一次，比如NAT/PAT的生命期是3分钟，那么就将注册重复周期设置为2分钟。
+
+另外STUN server并非指一个专用的服务器，而是指一种功能、一个协议，我们可以在softswitch或者任何一个需要此功能的服务器上内置此协议, 后面代码也包含一个简单的Server实现。
+
+但是在NAT采用对称模式(symmetric NAT)工作时，STUN的方案就会出现问题。假如我们在softswitch上提供STUN server功能，终端A通过STUN可以获得NAT为终端A与softswitch之间通信分配的地址A'，并将这个地址注册在softswitch上，当一个公网上的终端B呼叫终端A时，A'和B通过softswitch完成呼叫建立过程。当B试图向A'发送媒体流时，问题就出现了。因为对称NAT只允许从softswitch发送数据给地址A'，从B发送的媒体流将被丢弃。所以STUN无法应用于工作在对称模式的NAT.
+
+STUN协议最大的优点是无需现有NAT/FW设备做任何改动,同时STUN方式可在多个NAT串联的网络环境中使用. STUN的局限性在于STUN并不适合支持TCP连接的穿越,同时STUN方式不支持对对称NAT（Symmetric NAT）.
+
+TURN
+
+这种方式又称SPAN(Simple Protocol for Augmenting NATs)方式. TURN方式解决NAT问题的思路与STUN相似，也是基于私网接入用户通过某种机制预先得到其私有地址对应在公网的地址（STUN方式得到的地址为出口NAT上的地址，TURN方式得到地址为TURNServer上的地址），然后在报文负载中所描述的地址信息直接填写该公网地址的方式，实际应用原理也是一样的。
+TURN的全称为Traversal Using RelayNAT，即通过Relay方式穿越NAT，TURN应用模型通过分配TURNServer的地址和端口作为客户端对外的接受地址和端口，即私网用户发出的报文都要经过TURNServer进行Relay转发，这种方式除了具有STUN方式的优点外，还解决了STUN应用无法穿透对称NAT（Symmetric NAT）以及类似的Firewall设备的缺陷，即无论企业网/驻地网出口为哪种类型的NAT/FW，都可以实现NAT的穿透，同时TURN支持基于TCP的应用，如H323协议。TURN的局限性在于所有报文都必须经过TURNServer转发，增大了包的延迟和丢包的可能性.
+
+ 
+
+ICE
+
+ICE跟STUN和TURN不一样，ICE不是一种协议，而是一个framework，它整合了STUN和TURN。
+
+ 
+
+UPnP
+
+UPnP是若干网络协议的组合，主要用于设备的互联，但是一种叫做Internet Gateway Device (IGD) Protocol的防火墙穿越技术是基于UPnP的。
+
+
+资料
+Learning WebRTC
+WebRTC权威指南
+WebRTC零基础开发者教程
+
+
+Transfer a file
+
+common.js:6 15.464:  Offer from localConnection 
+v=0
+o=- 3307504032941827780 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+a=ice-ufrag:GDE0
+a=ice-pwd:jdqIVaxtKpcn82RS6GZ5idJh
+a=ice-options:trickle
+a=fingerprint:sha-256 77:70:43:82:C7:4C:89:93:DD:7C:C3:EA:58:DB:35:F5:E8:33:58:31:3F:02:45:AB:22:1E:92:1B:6F:44:3C:5B
+a=setup:actpass
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+common.js:6 15.466:  Answer from remoteConnection 
+v=0
+o=- 6074235835966170688 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+b=AS:30
+a=ice-ufrag:YssN
+a=ice-pwd:Oc+ghgNq+zJembDZyNhtcQTP
+a=ice-options:trickle
+a=fingerprint:sha-256 71:EC:C6:3C:18:4A:04:52:45:08:48:47:93:E1:70:E0:6E:62:07:D2:AC:AC:41:F2:BE:EB:39:3A:A7:29:80:F6
+a=setup:active
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+common.js:6 15.476:  localPeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 54318 typ host generation 0 ufrag GDE0 network-cost 50
+common.js:6 15.476:  AddIceCandidate success.
+common.js:6 15.488:  remotePeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 54322 typ host generation 0 ufrag YssN network-cost 50
+common.js:6 15.489:  AddIceCandidate success.
+common.js:6 15.489:  remotePeerConnection ICE candidate: 
+(null)
+common.js:6 15.489:  AddIceCandidate success.
+common.js:6 15.489:  localPeerConnection ICE candidate: 
+(null)
+common.js:6 15.490:  AddIceCandidate success.
+common.js:6 15.490:  Send channel state is: open
+common.js:6 15.506:  File is xCloudOS_AmazingBox_Build20180517_v3.2.1.9100_beta.bin 14942212 application/octet-stream Thu May 17 2018 20:57:25 GMT+0800 (中国标准时间)
+common.js:6 15.520:  Receive Channel Callback
+common.js:6 15.521:  Receive channel state is: open
+common.js:6 45.626:  Closing data channels
+common.js:6 45.627:  Closed data channel with label: sendDataChannel
+common.js:6 45.633:  Closed data channel with label: sendDataChannel
+common.js:6 45.640:  Closed peer connections
+common.js:6 45.644:  Send channel state is: closed
+common.js:6 45.644:  Receive channel state is: closed
+
+ 
+Transmit text
+
+4.902:  Using SCTP based data channels
+common.js:6 4.907:  Created local peer connection object localConnection
+common.js:6 4.908:  Created send data channel
+common.js:6 4.909:  Created remote peer connection object remoteConnection
+common.js:6 4.910:  Offer from localConnection 
+v=0
+o=- 359621426622984290 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+a=ice-ufrag:Rsrx
+a=ice-pwd:/0M0XUPRk8zjsIO/NoA75reL
+a=ice-options:trickle
+a=fingerprint:sha-256 90:0F:F7:33:C1:50:83:7D:44:81:99:C3:FB:FF:5D:3B:83:9F:04:0C:3E:68:E1:F3:99:F5:AA:66:A5:DC:8F:57
+a=setup:actpass
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+
+common.js:6 4.912:  Answer from remoteConnection 
+v=0
+o=- 2626569554974183678 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+b=AS:30
+a=ice-ufrag:1GTp
+a=ice-pwd:9c96Ldk4M7kETJ/A1vMFcsLC
+a=ice-options:trickle
+a=fingerprint:sha-256 08:40:27:77:2D:09:22:39:34:2F:13:ED:39:E3:16:0A:57:76:73:8F:7A:F5:BF:2C:DA:D2:63:8F:90:08:EC:41
+a=setup:active
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+
+common.js:6 4.915:  localPeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 59160 typ host generation 0 ufrag Rsrx network-cost 50
+common.js:6 4.916:  AddIceCandidate success.
+common.js:6 4.920:  remotePeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 59164 typ host generation 0 ufrag 1GTp network-cost 50
+common.js:6 4.920:  AddIceCandidate success.
+common.js:6 4.920:  remotePeerConnection ICE candidate: 
+(null)
+common.js:6 4.920:  AddIceCandidate success.
+common.js:6 4.920:  localPeerConnection ICE candidate: 
+(null)
+common.js:6 4.920:  AddIceCandidate success.
+common.js:6 4.921:  Send channel state is: open
+common.js:6 4.926:  Receive Channel Callback
+common.js:6 4.926:  Receive channel state is: open
+common.js:6 32.757:  Sent Data: send
+
+common.js:6 32.758:  Received Message
+common.js:6 82.764:  Sent Data: aaaa
+
+common.js:6 82.764:  Received Message
+
+
+
+
+Generate and transfer data
+
+12.831:  Created local peer connection object localConnection
+common.js:6 12.834:  Created send data channel
+common.js:6 12.836:  Created remote peer connection object remoteConnection
+common.js:6 12.838:  Offer from localConnection 
+v=0
+o=- 5151793415979839918 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+a=ice-ufrag:WnTc
+a=ice-pwd:7dwx096mYSQ6/aXuqj7KdAEU
+a=ice-options:trickle
+a=fingerprint:sha-256 76:75:F8:FD:5D:71:E1:0B:44:8A:2E:FA:BF:95:9A:AC:92:DA:B8:52:E4:FB:7D:C0:3C:74:33:56:72:76:D1:81
+a=setup:actpass
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+
+common.js:6 12.843:  Answer from remoteConnection 
+v=0
+o=- 2742576590802769766 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE data
+a=msid-semantic: WMS
+m=application 9 DTLS/SCTP 5000
+c=IN IP4 0.0.0.0
+b=AS:30
+a=ice-ufrag:2ceM
+a=ice-pwd:qC+vi3Ot1BGt8dYdyiekYJ9x
+a=ice-options:trickle
+a=fingerprint:sha-256 F9:77:54:C1:CB:87:F3:A7:D4:E8:BB:24:02:AC:69:26:98:81:4C:E8:19:7B:10:3D:30:93:1D:92:9A:45:5F:09
+a=setup:active
+a=mid:data
+a=sctpmap:5000 webrtc-datachannel 1024
+
+common.js:6 12.857:  localPeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 62280 typ host generation 0 ufrag WnTc network-cost 50
+common.js:6 12.858:  AddIceCandidate success.
+common.js:6 12.860:  remotePeerConnection ICE candidate: 
+candidate:4003186949 1 udp 2113937151 192.168.102.148 62284 typ host generation 0 ufrag 2ceM network-cost 50
+common.js:6 12.860:  AddIceCandidate success.
+common.js:6 12.860:  remotePeerConnection ICE candidate: 
+(null)
+common.js:6 12.860:  AddIceCandidate success.
+common.js:6 12.861:  localPeerConnection ICE candidate: 
+(null)
+common.js:6 12.861:  AddIceCandidate success.
+common.js:6 12.863:  Send channel state is: open
+common.js:6 12.874:  Using the bufferedamountlow event for flow control
+common.js:6 12.874:  Receive Channel Callback
+common.js:6 13.924:  Closing data channels
+common.js:6 13.924:  Closed data channel with label: sendDataChannel
+common.js:6 13.924:  Closed data channel with label: sendDataChannel
+common.js:6 13.927:  Closed peer connections
+common.js:6 13.929:  Send channel state is: closed
+ 

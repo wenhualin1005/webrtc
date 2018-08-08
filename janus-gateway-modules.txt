@@ -1,0 +1,103 @@
+module
+	Plugins
+		file  	janus_audiobridge.c
+			Janus AudioBridge plugin. 
+	 
+		file  	janus_echotest.c
+			Janus EchoTest plugin. 
+		 
+		file  	janus_recordplay.c
+			Janus Record&Play plugin. 
+		 
+		file  	janus_sip.c
+			Janus SIP plugin. 
+		 
+		file  	janus_streaming.c
+			Janus Streaming plugin. 
+		 
+		file  	janus_textroom.c
+			Janus TextRoom plugin. 
+		 
+		file  	janus_videocall.c
+			Janus VideoCall plugin. 
+		 
+		file  	janus_videoroom.c
+			Janus VideoRoom plugin. 
+		 
+		file  	janus_voicemail.c
+			Janus VoiceMail plugin. 
+			
+	Transports
+		file  	janus_http.c
+			Janus RESTs transport plugin. 
+	 
+		file  	janus_mqtt.c
+			Janus MQTT transport plugin. 
+		 
+		file  	janus_pfunix.c
+			Janus Unix Sockets transport plugin. 
+		 
+		file  	janus_rabbitmq.c
+			Janus RabbitMQ transport plugin. 
+		 
+		file  	janus_websockets.c
+			Janus WebSockets transport plugin. 
+			
+
+Janus TextRoom plugin
+join			
+ending string on data channel: {"textroom":"join","transaction":"Og5PuIZJy8hk","room":1234,"username":"00z3ZPbFEmRi","display":"xyz"}
+
+Sending string on data channel: {"textroom":"message","transaction":"3U4s0QmaINnr","room":1234,"text":"bbbb"}
+Received message on data channel: {
+   "textroom": "message",
+   "room": 1234,
+   "from": "73sTXL75sXqY",
+   "date": "2018-02-13T08:02:06+0000",
+   "text": "bbbb"
+}
+janus.js:1421 Received message on data channel: {
+   "textroom": "success",
+   "transaction": "3U4s0QmaINnr"
+}
+
+188.213.167.189
+64.233.188.127 
+
+
+
+源码分析：
+janus.c main()
+
+read_config
+Setup ICE stuff
+Setup OpenSSL stuff
+janus_dtls_srtp_init
+janus_sctp_init
+Sessions
+Load event handlers
+Load plugins
+Open the shared objects
+janus_transport_task
+Load transports 
+
+
+Setup ICE stuff
+janus_ice_set_stun_server()
+janus_ice_set_turn_server()
+janus_ice_init
+janus_ice_cb_component_state_changed
+janus_ice_cb_new_selected_pair
+janus_ice_cb_new_remote_candidate
+janus_ice_cb_nice_recv
+janus_ice_incoming_data
+janus_ice_thread
+janus_ice_candidates_to_sdp
+janus_ice_setup_remote_candidates
+janus_ice_send_thread
+janus_ice_relay_rtp 
+janus_ice_relay_rtcp
+janus_ice_dtls_handshake_done
+
+
+

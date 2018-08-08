@@ -1,0 +1,94 @@
+https://github.com/meetecho/janus-gateway
+
+install Janus
+On Ubuntu 14.04/Mint 17.1
+
+sudo apt-get install libmicrohttpd-dev libjansson-dev libnice-dev \
+libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev \
+libopus-dev libogg-dev libini-config-dev libcollection-dev \
+pkg-config gengetopt automake libtool doxygen graphviz git cmake
+To allow for post-processing tools:
+
+sudo apt-get install libavformat-dev
+Fetch code:
+
+ git clone git://github.com/meetecho/janus-gateway.git
+Then:
+
+
+If you want to use data channels:
+
+1，***************************
+sudo apt-get install subversion
+svn co http://sctp-refimpl.googlecode.com/svn/trunk/KERN/usrsctp usrsctp
+cd usrsctp
+./bootstrap
+./configure --prefix=/usr && make && sudo make install
+cd ..
+If you want to use websockets (libwebsockets):
+
+# obs cmake needed. to install: sudo apt-get install cmake
+git clone git://git.libwebsockets.org/libwebsockets
+cd libwebsockets
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make && sudo make install
+cd ../..
+***************************************
+
+2 *********************************************
+git clone https://github.com/sctplab/usrsctp
+cd usrsctp
+./bootstrap
+./configure --prefix=/usr && make && sudo make install
+
+git clone git://git.libwebsockets.org/libwebsockets
+cd libwebsockets
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_C_FLAGS="-fpic" ..
+make && sudo make install
+********************************************
+
+
+安装 libsrtp
+
+Janus 需要至少 version 1.5 以上的 libsrtp，如果系统中已经安装了 libsrtp，则首先卸载后，手动安装新版本，这里我们安装 libsrtp 2.0，依次执行以下命令：
+
+wget https://github.com/cisco/libsrtp/archive/v2.0.0.tar.gz
+tar xfv v2.0.0.tar.gz
+cd libsrtp-2.0.0
+./configure --prefix=/usr --enable-openssl
+make shared_library && sudo make install
+
+
+cd janus-gateway
+sh autogen.sh
+ ./configure --disable-rabbitmq --disable-data-channels --enable-post-processing # to use websockets
+#./configure --disable-websockets --disable-rabbitmq # to allow simple chat
+#./configure --disable-websockets --disable-data-channels --disable-rabbitmq
+If you switch between used protocols requiring different libs, force a recompilation by a later make:
+
+ make clean
+and then:
+
+make
+sudo make install
+sudo make configs
+ 
+
+
+test
+~/work/src/webrtc/janus-gateway/html
+python -m SimpleHTTPServer   //Serving HTTP on 0.0.0.0 port 8000 ..
+http://192.168.102.164:8000/index.html
+
+stun.freeswitch.org:3478
+http://192.168.102.164:8088/index.html
+http://125.70.163.32:8000/index.html
+
+
+./janus --stun-server=stun.freeswitch.org --log-file=/home/wenhualin/work/src/webrtc/janus-gateway/log --debug-level=7 --libnice-debug --ice-ignore-list=wlan0  --rtp-port-range=31000-31010
+
+

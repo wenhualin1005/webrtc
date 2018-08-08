@@ -1,0 +1,830 @@
+hualin@ubuntu:~/work/webrtc$ ./peerconnection_client
+(main_wnd.cc:230): SwitchToConnectUI
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(conductor.cc:202): OnSignedIn
+(main_wnd.cc:286): SwitchToPeerList
+(conductor.cc:473): SEND_MESSAGE_TO_PEER
+(peer_connection_client.cc:382): OnHangingGetRead
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(conductor.cc:216): OnPeerConnected
+(main_wnd.cc:286): SwitchToPeerList
+(peer_connection_client.cc:382): OnHangingGetRead
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(audio_processing_impl.cc:432): Capture post processor activated: 0
+Render pre processor activated: 0
+(webrtcvoiceengine.cc:211): WebRtcVoiceEngine::WebRtcVoiceEngine
+(webrtcvideoengine.cc:552): WebRtcVideoEngine::WebRtcVideoEngine()
+(webrtcvoiceengine.cc:234): WebRtcVoiceEngine::Init
+(webrtcvoiceengine.cc:241): Supported send codecs in order of preference:
+(webrtcvoiceengine.cc:244): opus/48000/2 { minptime=10 useinbandfec=1 } (111)
+(webrtcvoiceengine.cc:244): ISAC/16000/1 (103)
+(webrtcvoiceengine.cc:244): ISAC/32000/1 (104)
+(webrtcvoiceengine.cc:244): G722/8000/1 (9)
+(webrtcvoiceengine.cc:244): ILBC/8000/1 (102)
+(webrtcvoiceengine.cc:244): PCMU/8000/1 (0)
+(webrtcvoiceengine.cc:244): PCMA/8000/1 (8)
+(webrtcvoiceengine.cc:244): CN/32000/1 (106)
+(webrtcvoiceengine.cc:244): CN/16000/1 (105)
+(webrtcvoiceengine.cc:244): CN/8000/1 (13)
+(webrtcvoiceengine.cc:244): telephone-event/48000/1 (110)
+(webrtcvoiceengine.cc:244): telephone-event/32000/1 (112)
+(webrtcvoiceengine.cc:244): telephone-event/16000/1 (113)
+(webrtcvoiceengine.cc:244): telephone-event/8000/1 (126)
+(webrtcvoiceengine.cc:247): Supported recv codecs in order of preference:
+(webrtcvoiceengine.cc:250): opus/48000/2 { minptime=10 useinbandfec=1 } (111)
+(webrtcvoiceengine.cc:250): ISAC/16000/1 (103)
+(webrtcvoiceengine.cc:250): ISAC/32000/1 (104)
+(webrtcvoiceengine.cc:250): G722/8000/1 (9)
+(webrtcvoiceengine.cc:250): ILBC/8000/1 (102)
+(webrtcvoiceengine.cc:250): PCMU/8000/1 (0)
+(webrtcvoiceengine.cc:250): PCMA/8000/1 (8)
+(webrtcvoiceengine.cc:250): CN/32000/1 (106)
+(webrtcvoiceengine.cc:250): CN/16000/1 (105)
+(webrtcvoiceengine.cc:250): CN/8000/1 (13)
+(webrtcvoiceengine.cc:250): telephone-event/48000/1 (110)
+(webrtcvoiceengine.cc:250): telephone-event/32000/1 (112)
+(webrtcvoiceengine.cc:250): telephone-event/16000/1 (113)
+(webrtcvoiceengine.cc:250): telephone-event/8000/1 (126)
+(audio_device_impl.cc:74): Create
+(audio_device_buffer.cc:63): AudioDeviceBuffer::ctor
+(audio_device_impl.cc:108): AudioDeviceModuleImpl
+(audio_device_impl.cc:112): CheckPlatform
+(audio_device_impl.cc:123): current platform is Linux
+(audio_device_impl.cc:142): CreatePlatformSpecificObjects
+(audio_device_impl.cc:921): PlatformAudioLayer
+(audio_device_impl.cc:252): PulseAudio support is enabled.
+(audio_mixer_manager_pulse_linux.cc:55): AudioMixerManagerLinuxPulse created
+(audio_device_pulse_linux.cc:83): AudioDeviceLinuxPulse created
+(audio_device_impl.cc:257): Linux PulseAudio APIs will be utilized
+(audio_device_impl.cc:297): AttachAudioBuffer
+(audio_device_buffer.cc:185): SetRecordingSampleRate(0)
+(audio_device_buffer.cc:192): SetPlayoutSampleRate(0)
+(audio_device_buffer.cc:209): SetRecordingChannels(0)
+(audio_device_buffer.cc:216): SetPlayoutChannels(0)
+(audio_device_impl.cc:317): Init
+(audio_device_impl.cc:658): SetPlayoutDevice(0)
+(audio_device_impl.cc:350): InitSpeaker
+(audio_device_impl.cc:562): StereoPlayoutIsAvailable
+(audio_mixer_manager_pulse_linux.cc:187): SpeakerIsInitialized
+(audio_device_impl.cc:569): output: 1
+(audio_device_impl.cc:574): SetStereoPlayout(1)
+(audio_device_buffer.cc:216): SetPlayoutChannels(2)
+(audio_device_impl.cc:720): SetRecordingDevice(0)
+(audio_device_impl.cc:356): InitMicrophone
+(audio_device_impl.cc:519): StereoRecordingIsAvailable
+(audio_mixer_manager_pulse_linux.cc:194): MicrophoneIsInitialized
+(audio_device_impl.cc:526): output: 1
+(audio_device_impl.cc:531): SetStereoRecording(1)
+(audio_device_buffer.cc:209): SetRecordingChannels(2)
+(audio_processing_impl.cc:432): Capture post processor activated: 0
+Render pre processor activated: 0
+(audio_processing_impl.cc:695): Highpass filter activated: 0
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_device_impl.cc:833): RegisterAudioCallback
+(audio_device_buffer.cc:83): RegisterAudioCallback
+(webrtcvoiceengine.cc:324): WebRtcVoiceEngine::ApplyOptions: AudioOptions {aec: true, agc: true, ns: true, hf: true, swap: false, audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, typing: true, experimental_agc: false, extended_filter_aec: false, delay_agnostic_aec: false, experimental_ns: false, intelligibility_enhancer: false, residual_echo_detector: true, }
+(audio_device_impl.cc:849): BuiltInAECIsAvailable
+(audio_device_generic.cc:17): virtual bool webrtc::AudioDeviceGeneric::BuiltInAECIsAvailable() const: Not supported on this platform
+(audio_device_impl.cc:852): output: 0
+(apm_helpers.cc:118): Echo control set to 1 with mode 0
+(apm_helpers.cc:128): EC metrics set to 1
+(audio_device_impl.cc:865): BuiltInAGCIsAvailable
+(audio_device_generic.cc:27): virtual bool webrtc::AudioDeviceGeneric::BuiltInAGCIsAvailable() const: Not supported on this platform
+(audio_device_impl.cc:868): output: 0
+(apm_helpers.cc:82): AGC set to 1 with mode 0
+(audio_device_impl.cc:881): BuiltInNSIsAvailable
+(audio_device_generic.cc:37): virtual bool webrtc::AudioDeviceGeneric::BuiltInNSIsAvailable() const: Not supported on this platform
+(audio_device_impl.cc:884): output: 0
+(apm_helpers.cc:153): NS set to 1
+(webrtcvoiceengine.cc:507): Stereo swapping enabled? 0
+(webrtcvoiceengine.cc:512): NetEq capacity is 50
+(webrtcvoiceengine.cc:518): NetEq fast mode? 0
+(webrtcvoiceengine.cc:525): Typing detection is enabled? 1
+(apm_helpers.cc:167): VAD set to 1 for typing detection.
+(webrtcvoiceengine.cc:536): Delay agnostic aec is enabled? 0
+(webrtcvoiceengine.cc:546): Extended filter aec is enabled? 0
+(webrtcvoiceengine.cc:556): Experimental ns is enabled? 0
+(webrtcvoiceengine.cc:562): Intelligibility Enhancer is enabled? 0
+(audio_processing_impl.cc:695): Highpass filter activated: 1
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(peerconnectionfactory.cc:415): Using default network controller factory
+(alr_experiment.cc:65): Using ALR experiment settings: pacing factor: 1, max pacer queue length: 2875, ALR start bandwidth usage percent: 80, ALR end budget level percent: 40, ALR end budget level percent: -60, ALR experiment group ID: 3
+(bitrate_prober.cc:62): Bandwidth probing enabled, set to inactive
+(rtp_transport_controller_send.cc:45): Using Legacy SSCC
+(aimd_rate_control.cc:75): Using aimd rate control with back off factor 0.85
+(delay_based_bwe.cc:105): Using Trendline filter for delay change estimation with window size 20
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(delay_based_bwe.cc:313): BWE Setting start bitrate to: 300000
+(paced_sender.cc:356): ProcessThreadAttached 0x0x7fe7cc0a6b80
+(cpu_info.cc:46): Available number of cores: 4
+(aimd_rate_control.cc:75): Using aimd rate control with back off factor 0.85
+(remote_bitrate_estimator_single_stream.cc:56): RemoteBitrateEstimatorSingleStream: Instantiating.
+(opensslidentity.cc:44): Making key pair
+(peerconnection.cc:1247): Adding audio transceiver in response to a call to AddTrack.
+(device_info_linux.cc:40): NumberOfDevices
+(conductor.cc:438): OpenVideoCaptureDevice failed
+(main_wnd.cc:323): SwitchToStreamingUI
+(opensslidentity.cc:92): Returning key pair
+(opensslcertificate.cc:58): Making certificate for WebRTC
+(conductor.cc:298):  Received session description :{
+   "sdp" : "v=0\r\no=- 309142281499312752 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic: WMS stream_id\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 104 9 102 0 8 106 105 13 110 112 113 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:lALA\r\na=ice-pwd:OOhqw8NLyk6nya9WIIbVfh7l\r\na=ice-options:trickle\r\na=fingerprint:sha-256 5F:7B:82:62:AA:1A:2A:A0:C2:83:8C:C3:7C:D8:9D:E7:D0:5A:B1:6D:B3:7A:98:0D:5F:35:67:20:66:94:F4:25\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendrecv\r\na=msid:stream_id audio_label\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:102 ILBC/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:106 CN/32000\r\na=rtpmap:105 CN/16000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:112 telephone-event/32000\r\na=rtpmap:113 telephone-event/16000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:2337526072 cname:vbgvMtO59r9VjfEN\r\na=ssrc:2337526072 msid:stream_id audio_label\r\na=ssrc:2337526072 mslabel:stream_id\r\na=ssrc:2337526072 label:audio_label\r\n",
+   "type" : "offer"
+}
+
+
+(peerconnection_client:60763): Gtk-WARNING **: drawing failure for widget 'GtkDrawingArea': invalid value (typically too big) for the size of the input (surface, pattern, etc.)
+
+(peerconnection_client:60763): Gtk-WARNING **: drawing failure for widget 'GtkWindow': invalid value (typically too big) for the size of the input (surface, pattern, etc.)
+(opensslcertificate.cc:105): Returning certificate
+(p2ptransportchannel.cc:437): Set backup connection ping interval to 25000 milliseconds.
+(p2ptransportchannel.cc:446): Set ICE receiving timeout to 2500 milliseconds
+(p2ptransportchannel.cc:453): Set ping most likely connection to 0
+(p2ptransportchannel.cc:460): Set stable_writable_connection_ping_interval to 2500
+(p2ptransportchannel.cc:473): Set presume writable when fully relayed to 0
+(p2ptransportchannel.cc:482): Set regather_on_failed_networks_interval to 300000
+(p2ptransportchannel.cc:501): Set receiving_switching_delay to 1000
+(dtlssrtptransport.cc:57): Setting RTCP Transport on 0 transport (nil)
+(dtlssrtptransport.cc:62): Setting RTP Transport on 0 transport 0x7fe7c40034d0
+(p2ptransportchannel.cc:385): Received remote ICE parameters: ufrag=lALA, renomination disabled
+(webrtcvoiceengine.cc:1482): Setting voice channel options: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:324): WebRtcVoiceEngine::ApplyOptions: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:512): NetEq capacity is 50
+(webrtcvoiceengine.cc:518): NetEq fast mode? 0
+(webrtcvoiceengine.cc:536): Delay agnostic aec is enabled? 0
+(webrtcvoiceengine.cc:546): Extended filter aec is enabled? 0
+(webrtcvoiceengine.cc:556): Experimental ns is enabled? 0
+(webrtcvoiceengine.cc:562): Intelligibility Enhancer is enabled? 0
+(audio_processing_impl.cc:695): Highpass filter activated: 1
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(webrtcvoiceengine.cc:1500): Set voice channel options. Current options: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(channel.cc:113): Created channel for 0
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=down
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(peerconnection.cc:3506): Session: 1908628648737218228 Old state: kStable New state: kHaveRemoteOffer
+(channel.cc:851): Setting remote voice description
+(webrtcvoiceengine.cc:1300): WebRtcVoiceMediaChannel::SetSendParameters: {codecs: [AudioCodec[111:opus:48000:0:2], AudioCodec[103:ISAC:16000:0:1], AudioCodec[104:ISAC:32000:0:1], AudioCodec[9:G722:8000:0:1], AudioCodec[102:ILBC:8000:0:1], AudioCodec[0:PCMU:8000:0:1], AudioCodec[8:PCMA:8000:0:1], AudioCodec[106:CN:32000:0:1], AudioCodec[105:CN:16000:0:1], AudioCodec[13:CN:8000:0:1], AudioCodec[110:telephone-event:48000:0:1], AudioCodec[112:telephone-event:32000:0:1], AudioCodec[113:telephone-event:16000:0:1], AudioCodec[126:telephone-event:8000:0:1]], extensions: [{uri: urn:ietf:params:rtp-hdrext:ssrc-audio-level, id: 1}, {uri: urn:ietf:params:rtp-hdrext:sdes:mid, id: 9}], max_bandwidth_bps: -1, mid: 0, options: AudioOptions {}}
+(webrtcvoiceengine.cc:1698): Recreate all the receive streams because the send codec has changed.
+(webrtcvoiceengine.cc:2096): WebRtcVoiceMediaChannel::SetMaxSendBitrate.
+(webrtcvoiceengine.cc:1482): Setting voice channel options: AudioOptions {}
+(webrtcvoiceengine.cc:324): WebRtcVoiceEngine::ApplyOptions: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:512): NetEq capacity is 50
+(webrtcvoiceengine.cc:518): NetEq fast mode? 0
+(webrtcvoiceengine.cc:536): Delay agnostic aec is enabled? 0
+(webrtcvoiceengine.cc:546): Extended filter aec is enabled? 0
+(webrtcvoiceengine.cc:556): Experimental ns is enabled? 0
+(webrtcvoiceengine.cc:562): Intelligibility Enhancer is enabled? 0
+(audio_processing_impl.cc:695): Highpass filter activated: 1
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(webrtcvoiceengine.cc:1500): Set voice channel options. Current options: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:1843): AddRecvStream: {id:audio_label;ssrcs:[2337526072];ssrc_groups:;cname:vbgvMtO59r9VjfEN;stream_ids:stream_id;}
+(neteq_impl.cc:114): NetEq config: sample_rate_hz=16000, enable_post_decode_vad=true, max_packets_in_buffer=50, playout_mode=0, enable_fast_accelerate=false, enable_muted_state= true
+(audio_coding_module.cc:462): Created
+(audio_receive_stream.cc:107): AudioReceiveStream: 2337526072
+(audio_receive_stream.cc:347): AudioReceiveStream::ConfigureStream: {rtp: {remote_ssrc: 2337526072, local_ssrc: 4195875351, transport_cc: on, nack: {rtp_history_ms: 0}, extensions: []}, rtcp_send_transport: (Transport), sync_group: stream_id}
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=down
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(channel.cc:669): Add remote ssrc: 2337526072
+(channel.cc:792): Changing voice state, recv=0 send=0
+(peerconnection.cc:4756): Local and Remote descriptions must be applied to get the SSL Role of the SCTP transport.
+(peerconnection.cc:2392): Processing the addition of a new track for MID=0 (added to streams=[stream_id]).
+(webrtcvoiceengine.cc:1952): SetOutputVolume() to 1 for recv stream with ssrc 2337526072
+(conductor.cc:162): OnAddTrack 962d6672-620a-4031-8a5f-93d501f473a5
+(peerconnection.cc:4778): Local and Remote descriptions must be applied to get the SSL Role of the session.
+(conductor.cc:47): OnSuccess
+(dtlssrtptransport.cc:57): Setting RTCP Transport on 0 transport (nil)
+(dtlssrtptransport.cc:62): Setting RTP Transport on 0 transport 0x7fe7c40034d0
+(p2ptransportchannel.cc:374): Set ICE ufrag: rDH6 pwd: gygAZYR+3HbTRJYARnjwNIJI on transport 0
+(dtlstransport.cc:383): DtlsTransport[0|1|__]: DTLS setup complete.
+(rtptransceiver.cc:174): Changing transceiver (MID=0) current direction from <not set> to kSendRecv.
+(channel.cc:543): Channel enabled
+(channel.cc:792): Changing voice state, recv=0 send=0
+(peerconnection.cc:3506): Session: 1908628648737218228 Old state: kHaveRemoteOffer New state: kStable
+(channel.cc:800): Setting local voice description
+(webrtcvoiceengine.cc:1338): WebRtcVoiceMediaChannel::SetRecvParameters: {codecs: [AudioCodec[111:opus:48000:0:2], AudioCodec[103:ISAC:16000:0:1], AudioCodec[104:ISAC:32000:0:1], AudioCodec[9:G722:8000:0:1], AudioCodec[102:ILBC:8000:0:1], AudioCodec[0:PCMU:8000:0:1], AudioCodec[8:PCMA:8000:0:1], AudioCodec[106:CN:32000:0:1], AudioCodec[105:CN:16000:0:1], AudioCodec[13:CN:8000:0:1], AudioCodec[110:telephone-event:48000:0:1], AudioCodec[112:telephone-event:32000:0:1], AudioCodec[113:telephone-event:16000:0:1], AudioCodec[126:telephone-event:8000:0:1]], extensions: [{uri: urn:ietf:params:rtp-hdrext:ssrc-audio-level, id: 1}, {uri: urn:ietf:params:rtp-hdrext:sdes:mid, id: 9}]}
+(webrtcvoiceengine.cc:1510): Setting receive voice codecs.
+(audio_receive_stream.cc:347): AudioReceiveStream::ConfigureStream: {rtp: {remote_ssrc: 2337526072, local_ssrc: 4195875351, transport_cc: on, nack: {rtp_history_ms: 0}, extensions: []}, rtcp_send_transport: (Transport), sync_group: stream_id}
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=down
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(audio_receive_stream.cc:132): ~AudioReceiveStream: 2337526072
+(neteq_impl.cc:114): NetEq config: sample_rate_hz=16000, enable_post_decode_vad=true, max_packets_in_buffer=50, playout_mode=0, enable_fast_accelerate=false, enable_muted_state= true
+(audio_coding_module.cc:462): Created
+(audio_receive_stream.cc:107): AudioReceiveStream: 2337526072
+(audio_receive_stream.cc:347): AudioReceiveStream::ConfigureStream: {rtp: {remote_ssrc: 2337526072, local_ssrc: 4195875351, transport_cc: on, nack: {rtp_history_ms: 0}, extensions: [{uri: urn:ietf:params:rtp-hdrext:sdes:mid, id: 9}, {uri: urn:ietf:params:rtp-hdrext:ssrc-audio-level, id: 1}]}, rtcp_send_transport: (Transport), sync_group: stream_id}
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=down
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(webrtcvoiceengine.cc:1780): AddSendStream: {id:audio_label;ssrcs:[2983545252];ssrc_groups:;cname:alMyDj5S6db7G8FW;stream_ids:stream_id;}
+(neteq_impl.cc:114): NetEq config: sample_rate_hz=16000, enable_post_decode_vad=true, max_packets_in_buffer=0, playout_mode=0, enable_fast_accelerate=false, enable_muted_state= true
+(audio_coding_module.cc:462): Created
+(audio_send_stream.cc:134): AudioSendStream: 2983545252
+(audio_send_stream.cc:199): AudioSendStream::ConfigureStream: {rtp: {ssrc: 2983545252, extensions: [{uri: urn:ietf:params:rtp-hdrext:sdes:mid, id: 9}, {uri: urn:ietf:params:rtp-hdrext:ssrc-audio-level, id: 1}], nack: {rtp_history_ms: 0}, c_name: alMyDj5S6db7G8FW}, send_transport: (Transport), min_bitrate_bps: -1, max_bitrate_bps: -1, send_codec_spec: {nack_enabled: false, transport_cc_enabled: true, cng_payload_type: <unset>, payload_type: 111, format: {name: opus, clockrate_hz: 48000, num_channels: 2, parameters: {minptime: 10, useinbandfec: 1}}}}
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=down
+(send_side_congestion_controller.cc:276): SignalNetworkState Down
+(audio_receive_stream.cc:347): AudioReceiveStream::ConfigureStream: {rtp: {remote_ssrc: 2337526072, local_ssrc: 2983545252, transport_cc: on, nack: {rtp_history_ms: 0}, extensions: [{uri: urn:ietf:params:rtp-hdrext:sdes:mid, id: 9}, {uri: urn:ietf:params:rtp-hdrext:ssrc-audio-level, id: 1}]}, rtcp_send_transport: (Transport), sync_group: stream_id}
+(channel.cc:623): Add send stream ssrc: 2983545252
+(audio_device_impl.cc:795): Playing
+(audio_device_impl.cc:732): InitPlayout
+(audio_device_impl.cc:758): PlayoutIsInitialized
+(audio_device_buffer.cc:192): SetPlayoutSampleRate(44100)
+(audio_device_buffer.cc:216): SetPlayoutChannels(2)
+(audio_device_impl.cc:738): output: 0
+(audio_device_impl.cc:770): StartPlayout
+(audio_device_impl.cc:795): Playing
+(audio_device_buffer.cc:100): StartPlayout
+(paced_sender.cc:97): PacedSender paused.
+(audio_device_impl.cc:777): output: 0
+(channel.cc:792): Changing voice state, recv=1 send=0
+(audio_device_buffer.cc:315): Size of playout buffer: 882
+(peerconnection.cc:4762): Non-rejected SCTP m= section is needed to get the SSL Role of the SCTP transport.
+(webrtcvoiceengine.cc:1482): Setting voice channel options: AudioOptions {}
+(webrtcvoiceengine.cc:324): WebRtcVoiceEngine::ApplyOptions: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:512): NetEq capacity is 50
+(webrtcvoiceengine.cc:518): NetEq fast mode? 0
+(webrtcvoiceengine.cc:536): Delay agnostic aec is enabled? 0
+(webrtcvoiceengine.cc:546): Extended filter aec is enabled? 0
+(webrtcvoiceengine.cc:556): Experimental ns is enabled? 0
+(webrtcvoiceengine.cc:562): Intelligibility Enhancer is enabled? 0
+(audio_processing_impl.cc:695): Highpass filter activated: 1
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(webrtcvoiceengine.cc:1500): Set voice channel options. Current options: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(basicportallocator.cc:339): Start getting ports with prune_turn_ports disabled
+(basicportallocator.cc:107): Filtered out ignored networks:
+(basicportallocator.cc:109): Net[lo:::1/128:Loopback:id=3]
+(basicportallocator.cc:109): Net[lo:127.0.0.0/8:Loopback:id=2]
+(basicportallocator.cc:829): Network manager has started
+(basicportallocator.cc:107): Filtered out ignored networks:
+(basicportallocator.cc:109): Net[lo:::1/128:Loopback:id=3]
+(basicportallocator.cc:109): Net[lo:127.0.0.0/8:Loopback:id=2]
+(basicportallocator.cc:744): Allocate ports on 1 networks
+(basicportallocator.cc:1284): Net[ens33:192.168.99.0/24:Unknown:id=1]: Allocation Phase=Udp
+(port.cc:328): Port[0x7fe7c4016c60::1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Port created with network cost 50
+(basicportallocator.cc:1355): AllocationSequence: UDPPort will be handling the STUN candidate generation.
+(basicportallocator.cc:851): Adding allocated port for 0
+(basicportallocator.cc:871): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Added port to allocator
+(basicportallocator.cc:889): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Gathered candidate: Cand[:1088793078:1:udp:2122260223:192.168.99.51:56496:local::0:rDH6:gygAZYR+3HbTRJYARnjwNIJI:1:50:0]
+(basicportallocator.cc:917): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Port ready.
+(physicalsocketserver.cc:593): Socket::OPT_DSCP not supported.
+(p2ptransportchannel.cc:711): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: SetOption(5, 0) failed: 0
+(stunport.cc:392): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Starting STUN host lookup for stun.l.google.com:19302
+(messagequeue.cc:535): Message took 67ms to dispatch. Posted from: PostCreateSessionDescriptionSucceeded@../../pc/webrtcsessiondescriptionfactory.cc:447
+(conductor.cc:47): OnSuccess
+(conductor.cc:174): OnIceCandidate 0
+(conductor.cc:473): SEND_MESSAGE_TO_PEER
+(conductor.cc:473): SEND_MESSAGE_TO_PEER
+(peer_connection_client.cc:382): OnHangingGetRead
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(port.cc:1086): Conn[0x7fe7c4018670:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->Pu0d7D/j:1:2122260223:local:udp:192.168.99.243:58662|C--W|-|0|0|9115038255631187454|-]: Connection created
+(p2ptransportchannel.cc:1074): Channel[0|1|__]: Created connection with origin: 2, total: 1
+(p2ptransportchannel.cc:1716): Channel[0|1|__]: Transport channel state changed from 0 to 2
+(jseptransportcontroller.cc:1158): 0 Transport 1 state changed. Check if state is complete.
+(p2ptransportchannel.cc:1288): Channel[0|1|__]: Have a pingable connection for the first time; starting to ping.
+(peerconnection.cc:3463): Changing IceConnectionState 0 => 1
+(conductor.cc:330):  Received candidate :{
+   "candidate" : "candidate:2387184138 1 udp 2122260223 192.168.99.243 58662 typ host generation 0 ufrag lALA network-id 1 network-cost 50",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "0"
+}
+
+(audio_device_pulse_linux.cc:1764): Playout underflow
+(port.cc:1711): Conn[0x7fe7c4018670:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->Pu0d7D/j:1:2122260223:local:udp:192.168.99.243:58662|C--W|-|0|0|9115038255631187454|-]: Sent STUN ping, id=454a4f727647463839733564, use_candidate=0, nomination=0
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(conductor.cc:473): SEND_MESSAGE_TO_PEER
+(audio_device_pulse_linux.cc:1764): Playout underflow
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(conductor.cc:473): SEND_MESSAGE_TO_PEER
+(audio_device_pulse_linux.cc:1764): Playout underflow
+(audio_device_pulse_linux.cc:1764): Playout underflow
+(peer_connection_client.cc:382): OnHangingGetRead
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(port.cc:1086): Conn[0x7fe7c4019630:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->VoWsb68g:1:1686052607:stun:udp:125.70.163.135:58662|C--W|-|0|0|7241540810645061118|-]: Connection created
+(p2ptransportchannel.cc:1074): Channel[0|1|__]: Created connection with origin: 2, total: 2
+(p2ptransportchannel.cc:1716): Channel[0|1|__]: Transport channel state changed from 2 to 1
+(jseptransportcontroller.cc:1158): 0 Transport 1 state changed. Check if state is complete.
+(conductor.cc:330):  Received candidate :{
+   "candidate" : "candidate:1120187801 1 udp 1686052607 125.70.163.135 58662 typ srflx raddr 192.168.99.243 rport 58662 generation 0 ufrag lALA network-id 1 network-cost 50",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "0"
+}
+
+(thread.cc:267): Waiting for the thread to join, but blocking calls have been disallowed
+(port.cc:1655): Conn[0x7fe7c4018670:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->Pu0d7D/j:1:2122260223:local:udp:192.168.99.243:58662|C--I|-|0|0|9115038255631187454|-]: Received STUN ping response, id=454a4f727647463839733564, code=0, rtt=19, pings_since_last_response=454a4f727647463839733564 
+(p2ptransportchannel.cc:253): Switching selected connection due to: nomination on the controlled side
+(p2ptransportchannel.cc:1674): Channel[0|1|__]: New selected connection: Conn[0x7fe7c4018670:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->Pu0d7D/j:1:2122260223:local:udp:192.168.99.243:58662|CRWS|S|1|0|9115038255631187454|19]
+(port.cc:1357): Conn[0x7fe7c4019630:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->VoWsb68g:1:1686052607:stun:udp:125.70.163.135:58662|C--W|-|0|0|7241540810645061118|-]: Connection pruned
+(p2ptransportchannel.cc:1716): Channel[0|1|__]: Transport channel state changed from 1 to 2
+(jseptransportcontroller.cc:1158): 0 Transport 1 state changed. Check if state is complete.
+(dtlstransport.cc:808): DtlsTransport[0|1|__]: configuring DTLS handshake timeout 50 based on ICE RTT 19
+(opensslstreamadapter.cc:760): BeginSSL with peer.
+(openssladapter.cc:819): SSL_connect:TLS client enter_early_data
+(openssladapter.cc:819): SSL_connect:TLS client read_hello_verify_request
+(openssladapter.cc:829): SSL_connect:error in TLS client read_hello_verify_request
+(dtlstransport.cc:717): DtlsTransport[0|1|__]: DtlsTransport: Started DTLS handshake
+(srtptransport.cc:354): The params in SRTP transport are reset.
+(basicportallocator.cc:1087): All candidates gathered for 0:1:0
+(p2ptransportchannel.cc:766): P2PTransportChannel: 0, component 1 gathering complete
+(basicportallocator.cc:889): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Gathered candidate: Cand[:3249385282:1:udp:1686052607:125.70.163.135:56496:stun:192.168.99.51:56496:rDH6:gygAZYR+3HbTRJYARnjwNIJI:1:50:0]
+(basicportallocator.cc:894): Discarding candidate because port is already done gathering.
+(basicportallocator.cc:991): Port[0x7fe7c4016c60:0:1:0:local:Net[ens33:192.168.99.0/24:Unknown:id=1]]: Port completed gathering candidates.
+(opensslstreamadapter.cc:934): DTLS timeout expired
+(openssladapter.cc:829): SSL_connect:error in TLS client read_hello_verify_request
+(opensslstreamadapter.cc:934): DTLS timeout expired
+(openssladapter.cc:829): SSL_connect:error in TLS client read_hello_verify_request
+(openssladapter.cc:819): SSL_connect:TLS client read_server_hello
+(openssladapter.cc:819): SSL_connect:TLS client read_server_certificate
+(openssladapter.cc:819): SSL_connect:TLS client read_certificate_status
+(openssladapter.cc:819): SSL_connect:TLS client verify_server_certificate
+(opensslstreamadapter.cc:1084): Accepted peer certificate.
+(openssladapter.cc:819): SSL_connect:TLS client read_server_key_exchange
+(openssladapter.cc:819): SSL_connect:TLS client read_certificate_request
+(openssladapter.cc:819): SSL_connect:TLS client read_server_hello_done
+(openssladapter.cc:819): SSL_connect:TLS client send_client_certificate
+(openssladapter.cc:819): SSL_connect:TLS client send_client_key_exchange
+(openssladapter.cc:819): SSL_connect:TLS client send_client_certificate_verify
+(openssladapter.cc:819): SSL_connect:TLS client send_client_finished
+(openssladapter.cc:819): SSL_connect:TLS client finish_flight
+(openssladapter.cc:819): SSL_connect:TLS client read_session_ticket
+(openssladapter.cc:829): SSL_connect:error in TLS client read_session_ticket
+(openssladapter.cc:819): SSL_connect:TLS client process_change_cipher_spec
+(openssladapter.cc:819): SSL_connect:TLS client read_server_finished
+(openssladapter.cc:819): SSL_connect:TLS client finish_client_handshake
+(openssladapter.cc:819): SSL_connect:TLS client done
+(dtlstransport.cc:645): DtlsTransport[0|1|__]: DTLS handshake complete.
+(jseptransportcontroller.cc:1088):  Transport 0 writability changed to 1.
+(call.cc:1057): UpdateAggregateNetworkState: aggregate_state=up
+(peerconnection.cc:5223): Changing to ICE connected state because all transports are writable.
+(send_side_congestion_controller.cc:276): SignalNetworkState Up
+(dtlssrtptransport.cc:215): Extracting keys from transport: 0
+(peerconnection.cc:3463): Changing IceConnectionState 1 => 2
+(bitrate_prober.cc:108): Probe cluster (bitrate:min bytes:min packets): (900000:1687:5)
+(bitrate_prober.cc:108): Probe cluster (bitrate:min bytes:min packets): (1800000:3375:5)
+(send_side_congestion_controller.cc:477): Bitrate estimate state changed, BWE: 300000 bps.
+(bitrate_allocator.cc:104): Current BWE 300000
+(paced_sender.cc:112): PacedSender resumed.
+(srtptransport.cc:294): SRTP activated with negotiated parameters: send cipher_suite 1 recv cipher_suite 1
+(channel.cc:573): Channel writable (0) for the first time
+(webrtcvoiceengine.cc:324): WebRtcVoiceEngine::ApplyOptions: AudioOptions {audio_jitter_buffer_max_packets: 50, audio_jitter_buffer_fast_accelerate: false, }
+(webrtcvoiceengine.cc:512): NetEq capacity is 50
+(webrtcvoiceengine.cc:518): NetEq fast mode? 0
+(webrtcvoiceengine.cc:536): Delay agnostic aec is enabled? 0
+(webrtcvoiceengine.cc:546): Extended filter aec is enabled? 0
+(webrtcvoiceengine.cc:556): Experimental ns is enabled? 0
+(webrtcvoiceengine.cc:562): Intelligibility Enhancer is enabled? 0
+(audio_processing_impl.cc:695): Highpass filter activated: 1
+(fixed_gain_controller.cc:50): Gain to apply: 0 db.
+(audio_processing_impl.cc:709): Gain Controller 2 activated: 0
+(audio_processing_impl.cc:711): Pre-amplifier activated: 0
+(audio_device_impl.cc:764): RecordingIsInitialized
+(audio_device_impl.cc:826): Recording
+(audio_device_impl.cc:745): InitRecording
+(audio_device_impl.cc:764): RecordingIsInitialized
+(audio_device_buffer.cc:185): SetRecordingSampleRate(44100)
+(audio_device_buffer.cc:209): SetRecordingChannels(2)
+(audio_device_impl.cc:751): output: 0
+(audio_device_impl.cc:826): Recording
+(audio_device_impl.cc:745): InitRecording
+(audio_device_impl.cc:764): RecordingIsInitialized
+(audio_device_impl.cc:801): StartRecording
+(audio_device_impl.cc:826): Recording
+(audio_device_buffer.cc:120): StartRecording
+(audio_device_impl.cc:808): output: 0
+(channel.cc:792): Changing voice state, recv=1 send=1
+(audio_device_buffer.cc:264): Size of recording buffer: 882
+(agc_manager_direct.cc:346): [agc] Initial GetMicVolume()=0
+(agc_manager_direct.cc:351): [agc] Initial volume too low, raising to 12
+(rtp_sender_audio.cc:243): First audio RTP packet sent to pacer
+(peer_connection_client.cc:382): OnHangingGetRead
+(peer_connection_client.cc:306): Headers received
+(peer_connection_client.cc:481): OnClose
+(conductor.cc:330):  Received candidate :{
+   "candidate" : "candidate:3234494202 1 tcp 1518280447 192.168.99.243 51769 typ host tcptype passive generation 0 ufrag lALA network-id 1 network-cost 50",
+   "sdpMLineIndex" : 0,
+   "sdpMid" : "0"
+}
+
+(rtp_receiver_audio.cc:151): Received first audio RTP packet
+(agc_manager_direct.cc:346): [agc] Initial GetMicVolume()=12
+(probe_controller.cc:278): kWaitingForProbingResult: timeout
+(messagequeue.cc:535): Message took 55ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3184625701 in NTP clock: 3737518874792 estimated time in receiver clock: 89827403 converted to NTP clock: 3737518682917
+(audio_device_buffer.cc:428): [REC : 10002msec, 44kHz] callbacks: 942, samples: 415422, rate: 41534, level: 66
+(audio_device_buffer.cc:437): [PLAY: 10002msec, 44kHz] callbacks: 1030, samples: 454230, rate: 45414, level: 94
+(port.cc:1758): Connection deleted with number of pings sent: 0
+(p2ptransportchannel.cc:2122): Channel[0|1|RW]: Removed connection 0x7fe7c4019630 (1 remaining)
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3185098810 in NTP clock: 3737518884645 estimated time in receiver clock: 89837256 converted to NTP clock: 3737518692770
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 29
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 997, samples: 439677, rate: 43924, level: 130
+(srtpsession.cc:135): Failed to unprotect SRTP packet, err=9
+(srtptransport.cc:210): Failed to unprotect RTP packet: size=88, seqnum=29764, SSRC=2337526072
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3185580712 in NTP clock: 3737518894681 estimated time in receiver clock: 89847292 converted to NTP clock: 3737518702807
+(messagequeue.cc:535): Message took 55ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10003msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44131, level: 20
+(audio_device_buffer.cc:437): [PLAY: 10003msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44175, level: 103
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3186061848 in NTP clock: 3737518904701 estimated time in receiver clock: 89857312 converted to NTP clock: 3737518712826
+(audio_device_buffer.cc:428): [REC : 10004msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44082, level: 18
+(audio_device_buffer.cc:437): [PLAY: 10004msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44082, level: 44
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3186550718 in NTP clock: 3737518914882 estimated time in receiver clock: 89867492 converted to NTP clock: 3737518723006
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 95
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44241, level: 80
+(messagequeue.cc:535): Message took 54ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3187037212 in NTP clock: 3737518925013 estimated time in receiver clock: 89877623 converted to NTP clock: 3737518733137
+(audio_device_buffer.cc:428): [REC : 10005msec, 44kHz] callbacks: 999, samples: 440559, rate: 44034, level: 24
+(audio_device_buffer.cc:437): [PLAY: 10005msec, 44kHz] callbacks: 997, samples: 439677, rate: 43946, level: 122
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3187519612 in NTP clock: 3737518935049 estimated time in receiver clock: 89887659 converted to NTP clock: 3737518743173
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 45
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1005, samples: 443205, rate: 44276, level: 97
+
+(peerconnection_client:60763): Gtk-WARNING **: drawing failure for widget 'GtkDrawingArea': invalid value (typically too big) for the size of the input (surface, pattern, etc.)
+
+(peerconnection_client:60763): Gtk-WARNING **: drawing failure for widget 'GtkWindow': invalid value (typically too big) for the size of the input (surface, pattern, etc.)
+(messagequeue.cc:535): Message took 55ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(messagequeue.cc:535): Message took 67ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(messagequeue.cc:535): Message took 59ms to dispatch. Posted from: OnPacketReceived@../../pc/channel.cc:519
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3188003021 in NTP clock: 3737518945114 estimated time in receiver clock: 89897722 converted to NTP clock: 3737518753237
+(audio_device_buffer.cc:428): [REC : 10005msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44166, level: 94
+(audio_device_buffer.cc:437): [PLAY: 10005msec, 44kHz] callbacks: 999, samples: 440559, rate: 44034, level: 120
+(messagequeue.cc:535): Message took 65ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(messagequeue.cc:535): Message took 54ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3188480557 in NTP clock: 3737518955072 estimated time in receiver clock: 89907682 converted to NTP clock: 3737518763197
+(audio_device_buffer.cc:428): [REC : 10000msec, 44kHz] callbacks: 997, samples: 439677, rate: 43968, level: 33
+(audio_device_buffer.cc:437): [PLAY: 10000msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44188, level: 113
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3188968214 in NTP clock: 3737518965228 estimated time in receiver clock: 89917836 converted to NTP clock: 3737518773350
+(audio_device_buffer.cc:428): [REC : 10001msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44272, level: 45
+(audio_device_buffer.cc:437): [PLAY: 10001msec, 44kHz] callbacks: 995, samples: 438795, rate: 43875, level: 131
+(messagequeue.cc:535): Message took 54ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3189448265 in NTP clock: 3737518975225 estimated time in receiver clock: 89927833 converted to NTP clock: 3737518783347
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 31
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 999, samples: 440559, rate: 44012, level: 310
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3189929681 in NTP clock: 3737518985287 estimated time in receiver clock: 89937895 converted to NTP clock: 3737518793409
+(audio_device_buffer.cc:428): [REC : 10007msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44069, level: 99
+(audio_device_buffer.cc:437): [PLAY: 10007msec, 44kHz] callbacks: 1005, samples: 443205, rate: 44289, level: 99
+(messagequeue.cc:535): Message took 64ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3190413337 in NTP clock: 3737518995384 estimated time in receiver clock: 89947992 converted to NTP clock: 3737518803506
+(audio_device_buffer.cc:428): [REC : 10009msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44148, level: 23
+(audio_device_buffer.cc:437): [PLAY: 10009msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44148, level: 104
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3190895168 in NTP clock: 3737519005425 estimated time in receiver clock: 89958033 converted to NTP clock: 3737518813548
+(audio_device_buffer.cc:428): [REC : 10005msec, 44kHz] callbacks: 999, samples: 440559, rate: 44034, level: 33
+(audio_device_buffer.cc:437): [PLAY: 10005msec, 44kHz] callbacks: 999, samples: 440559, rate: 44034, level: 46
+(rtp_rtcp_impl.cc:205): virtual void webrtc::ModuleRtpRtcpImpl::Process(): Timeout: No RTCP RR received.
+(rtp_rtcp_impl.cc:207): virtual void webrtc::ModuleRtpRtcpImpl::Process(): Timeout: No increase in RTCP RR extended highest sequence number.
+(rtp_to_ntp_estimator.cc:153): Multiple consecutively invalid RTCP SR reports, clearing measurements.
+(audio_device_buffer.cc:428): [REC : 10001msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44140, level: 42
+(audio_device_buffer.cc:437): [PLAY: 10001msec, 44kHz] callbacks: 998, samples: 440118, rate: 44007, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3191560448 in NTP clock: 3737518827401 estimated time in receiver clock: 89780010 converted to NTP clock: 3737518635524
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 20
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3192041408 in NTP clock: 3737518837423 estimated time in receiver clock: 89790032 converted to NTP clock: 3737518645546
+(audio_device_buffer.cc:428): [REC : 10000msec, 44kHz] callbacks: 998, samples: 440118, rate: 44012, level: 53
+(audio_device_buffer.cc:437): [PLAY: 10000msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44276, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3192523808 in NTP clock: 3737518847468 estimated time in receiver clock: 89800078 converted to NTP clock: 3737518655592
+(audio_device_buffer.cc:428): [REC : 10001msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44096, level: 40
+(audio_device_buffer.cc:437): [PLAY: 10001msec, 44kHz] callbacks: 997, samples: 439677, rate: 43963, level: 0
+(messagequeue.cc:535): Message took 62ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3193006208 in NTP clock: 3737518857527 estimated time in receiver clock: 89810137 converted to NTP clock: 3737518665652
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1003, samples: 442323, rate: 44188, level: 102
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 997, samples: 439677, rate: 43924, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3193488128 in NTP clock: 3737518867576 estimated time in receiver clock: 89820186 converted to NTP clock: 3737518675701
+(audio_device_buffer.cc:428): [REC : 10006msec, 44kHz] callbacks: 999, samples: 440559, rate: 44029, level: 50
+(audio_device_buffer.cc:437): [PLAY: 10006msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44162, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3193969088 in NTP clock: 3737518877596 estimated time in receiver clock: 89830207 converted to NTP clock: 3737518685722
+(messagequeue.cc:535): Message took 59ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10007msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44113, level: 33
+(audio_device_buffer.cc:437): [PLAY: 10007msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44069, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3194449568 in NTP clock: 3737518887603 estimated time in receiver clock: 89840214 converted to NTP clock: 3737518695728
+(audio_device_buffer.cc:428): [REC : 10009msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44060, level: 73
+(audio_device_buffer.cc:437): [PLAY: 10009msec, 44kHz] callbacks: 1007, samples: 444087, rate: 44369, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3194929568 in NTP clock: 3737518897606 estimated time in receiver clock: 89850218 converted to NTP clock: 3737518705732
+(audio_device_buffer.cc:428): [REC : 10009msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44148, level: 47
+(audio_device_buffer.cc:437): [PLAY: 10009msec, 44kHz] callbacks: 999, samples: 440559, rate: 44016, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3195411008 in NTP clock: 3737518907638 estimated time in receiver clock: 89860251 converted to NTP clock: 3737518715766
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 60
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3195892928 in NTP clock: 3737518917676 estimated time in receiver clock: 89870289 converted to NTP clock: 3737518725803
+(messagequeue.cc:535): Message took 51ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 68
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44065, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3196375808 in NTP clock: 3737518927736 estimated time in receiver clock: 89880349 converted to NTP clock: 3737518735863
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 999, samples: 440559, rate: 44012, level: 35
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 995, samples: 438795, rate: 43836, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3196853888 in NTP clock: 3737518937696 estimated time in receiver clock: 89890309 converted to NTP clock: 3737518745823
+(messagequeue.cc:535): Message took 53ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 997, samples: 439677, rate: 43924, level: 63
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3197333408 in NTP clock: 3737518947703 estimated time in receiver clock: 89900460 converted to NTP clock: 3737518755974
+(audio_device_buffer.cc:428): [REC : 10001msec, 44kHz] callbacks: 998, samples: 440118, rate: 44007, level: 41
+(audio_device_buffer.cc:437): [PLAY: 10001msec, 44kHz] callbacks: 994, samples: 438354, rate: 43831, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3197815808 in NTP clock: 3737518957756 estimated time in receiver clock: 90102200 converted to NTP clock: 3737518957714
+(messagequeue.cc:535): Message took 59ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10007msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44113, level: 52
+(audio_device_buffer.cc:437): [PLAY: 10007msec, 44kHz] callbacks: 1005, samples: 443205, rate: 44289, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3198298208 in NTP clock: 3737518967809 estimated time in receiver clock: 90112253 converted to NTP clock: 3737518967767
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44065, level: 49
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 999, samples: 440559, rate: 44021, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3198779648 in NTP clock: 3737518977852 estimated time in receiver clock: 90122296 converted to NTP clock: 3737518977810
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 999, samples: 440559, rate: 44021, level: 49
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 997, samples: 439677, rate: 43933, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3199260128 in NTP clock: 3737518987889 estimated time in receiver clock: 90132334 converted to NTP clock: 3737518987848
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 78
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44065, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3199739648 in NTP clock: 3737518997886 estimated time in receiver clock: 90142332 converted to NTP clock: 3737518997847
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44065, level: 52
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3200220608 in NTP clock: 3737519007917 estimated time in receiver clock: 90152363 converted to NTP clock: 3737519007877
+(messagequeue.cc:535): Message took 55ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44065, level: 40
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3200701568 in NTP clock: 3737519017939 estimated time in receiver clock: 90162386 converted to NTP clock: 3737519017901
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 999, samples: 440559, rate: 44021, level: 50
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 997, samples: 439677, rate: 43933, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3201183968 in NTP clock: 3737519028007 estimated time in receiver clock: 90172456 converted to NTP clock: 3737519027970
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 19
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3201664928 in NTP clock: 3737519038037 estimated time in receiver clock: 90182487 converted to NTP clock: 3737519038001
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44109, level: 27
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44153, level: 0
+(messagequeue.cc:535): Message took 58ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3202144448 in NTP clock: 3737519048019 estimated time in receiver clock: 90192470 converted to NTP clock: 3737519047985
+(rtp_rtcp_impl.cc:205): virtual void webrtc::ModuleRtpRtcpImpl::Process(): Timeout: No RTCP RR received.
+(rtp_rtcp_impl.cc:207): virtual void webrtc::ModuleRtpRtcpImpl::Process(): Timeout: No increase in RTCP RR extended highest sequence number.
+(audio_device_buffer.cc:428): [REC : 10008msec, 44kHz] callbacks: 998, samples: 440118, rate: 43977, level: 21
+(audio_device_buffer.cc:437): [PLAY: 10008msec, 44kHz] callbacks: 995, samples: 438795, rate: 43844, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3202626848 in NTP clock: 3737519058076 estimated time in receiver clock: 90202527 converted to NTP clock: 3737519058041
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 42
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1007, samples: 444087, rate: 44364, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3203109248 in NTP clock: 3737519068101 estimated time in receiver clock: 90212553 converted to NTP clock: 3737519068067
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44232, level: 36
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 999, samples: 440559, rate: 44012, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3203590208 in NTP clock: 3737519078124 estimated time in receiver clock: 90222576 converted to NTP clock: 3737519078091
+(messagequeue.cc:535): Message took 64ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 997, samples: 439677, rate: 43919, level: 23
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44140, level: 0
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3204071168 in NTP clock: 3737519088144 estimated time in receiver clock: 90232597 converted to NTP clock: 3737519088112
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(packet_buffer.cc:97): Packet buffer flushed
+(audio_device_buffer.cc:428): [REC : 10009msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44148, level: 50
+(audio_device_buffer.cc:437): [PLAY: 10009msec, 44kHz] callbacks: 997, samples: 439677, rate: 43928, level: 529
+(port.cc:1703): Conn[0x7fe7c4018670:0:Net[ens33:192.168.99.0/24:Unknown:id=1]:QDj8thp3:1:0:local:udp:192.168.99.51:56496->Pu0d7D/j:1:2122260223:local:udp:192.168.99.243:58662|CRWS|S|1|0|9115038255631187454|44]: Timing-out STUN ping 69376d6e3533697142397337 after 60000 ms
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3204527318 in NTP clock: 3737519097643 estimated time in receiver clock: 90242100 converted to NTP clock: 3737519097614
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 26
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 91
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3205018609 in NTP clock: 3737519107875 estimated time in receiver clock: 90252332 converted to NTP clock: 3737519107847
+(messagequeue.cc:535): Message took 62ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44140, level: 34
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44052, level: 445
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3205499423 in NTP clock: 3737519117891 estimated time in receiver clock: 90262348 converted to NTP clock: 3737519117862
+(audio_device_buffer.cc:428): [REC : 10007msec, 44kHz] callbacks: 999, samples: 440559, rate: 44025, level: 54
+(audio_device_buffer.cc:437): [PLAY: 10007msec, 44kHz] callbacks: 997, samples: 439677, rate: 43937, level: 88
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3205982522 in NTP clock: 3737519127854 estimated time in receiver clock: 90272311 converted to NTP clock: 3737519127826
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 18
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44232, level: 51
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3206478418 in NTP clock: 3737519138267 estimated time in receiver clock: 90282727 converted to NTP clock: 3737519138241
+(messagequeue.cc:535): Message took 54ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 24
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1003, samples: 442323, rate: 44188, level: 71
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3206959152 in NTP clock: 3737519148277 estimated time in receiver clock: 90292739 converted to NTP clock: 3737519148254
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44052, level: 18
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 997, samples: 439677, rate: 43919, level: 99
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3207441056 in NTP clock: 3737519158324 estimated time in receiver clock: 90302788 converted to NTP clock: 3737519158303
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44100, level: 35
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 999, samples: 440559, rate: 44012, level: 101
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3207922151 in NTP clock: 3737519168341 estimated time in receiver clock: 90312807 converted to NTP clock: 3737519168322
+(messagequeue.cc:535): Message took 59ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10007msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44069, level: 19
+(audio_device_buffer.cc:437): [PLAY: 10007msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44157, level: 94
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3208392218 in NTP clock: 3737519178128 estimated time in receiver clock: 90322595 converted to NTP clock: 3737519178109
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1003, samples: 442323, rate: 44188, level: 35
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1005, samples: 443205, rate: 44276, level: 192
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3208877542 in NTP clock: 3737519188233 estimated time in receiver clock: 90332700 converted to NTP clock: 3737519188215
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1009, samples: 444969, rate: 44452, level: 36
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1009, samples: 444969, rate: 44452, level: 74
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3209361862 in NTP clock: 3737519198304 estimated time in receiver clock: 90342771 converted to NTP clock: 3737519198286
+(messagequeue.cc:535): Message took 59ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1004, samples: 442764, rate: 44232, level: 18
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1005, samples: 443205, rate: 44276, level: 106
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3209840630 in NTP clock: 3737519208286 estimated time in receiver clock: 90352753 converted to NTP clock: 3737519208267
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1003, samples: 442323, rate: 44188, level: 37
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 997, samples: 439677, rate: 43924, level: 130
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3210323431 in NTP clock: 3737519218378 estimated time in receiver clock: 90362845 converted to NTP clock: 3737519218359
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 1001, samples: 441441, rate: 44096, level: 45
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 1007, samples: 444087, rate: 44360, level: 85
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3210809977 in NTP clock: 3737519228574 estimated time in receiver clock: 90373041 converted to NTP clock: 3737519228556
+(messagequeue.cc:535): Message took 65ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1000, samples: 441000, rate: 44056, level: 38
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 73
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3211298702 in NTP clock: 3737519238762 estimated time in receiver clock: 90383229 converted to NTP clock: 3737519238743
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44140, level: 53
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 999, samples: 440559, rate: 44007, level: 84
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3211773470 in NTP clock: 3737519248621 estimated time in receiver clock: 90393088 converted to NTP clock: 3737519248602
+(srtpsession.cc:135): Failed to unprotect SRTP packet, err=9
+(srtptransport.cc:210): Failed to unprotect RTP packet: size=80, seqnum=57518, SSRC=2337526072
+(audio_device_buffer.cc:428): [REC : 10011msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44140, level: 24
+(audio_device_buffer.cc:437): [PLAY: 10011msec, 44kHz] callbacks: 1003, samples: 442323, rate: 44184, level: 73
+(remote_ntp_time_estimator.cc:74): RTP timestamp: 3212253363 in NTP clock: 3737519258628 estimated time in receiver clock: 90403095 converted to NTP clock: 3737519258609
+(messagequeue.cc:535): Message took 55ms to dispatch. Posted from: SendPacket@../../pc/channel.cc:401
+(audio_device_buffer.cc:428): [REC : 10010msec, 44kHz] callbacks: 1002, samples: 441882, rate: 44144, level: 50
+(audio_device_buffer.cc:437): [PLAY: 10010msec, 44kHz] callbacks: 999, samples: 440559, rate: 44012, level: 155

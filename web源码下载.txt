@@ -1,0 +1,130 @@
+
+环境 ubuntu16.04
+一：VPS安装
+
+(1), 安装shadowsocks
+
+1,
+ sudo apt-get update
+ sudo pip install shadowsocks
+2，
+sudo vim /etc/sslocal.json
+{
+	"server": "202.5.18.136",
+	"server_port": 4898,
+	"local_address":"127.0.0.1",
+	"local_port":1080,
+	"password": "dt123456",
+	"timeout":300,
+	"method": "aes-256-cfb",
+	"fast_open":false
+}
+
+3，运行
+手动运行 ：sslocal -c /etc/sslocal.json -d start
+
+开机自动启动： sudo vim /etc/rc.local
+加上一行：
+/usr/local/bin/sslocal -c /etc/sslocal.json -d start
+
+(2),安装Privoxy
+sudo apt-get install python-m2crypto privoxy
+
+配置privoxy 
+privoxy的配置文件位于/etc/privoxy/config，用vi打开配置文件 sudo vi /etc/privoxy/config
+
+监听端口 
+在配置文件中有这样一行listen-address localhost:8118 , (保证没有被注释)这一行代表的意思是，privoxy会监听本地的8118端口，接受请求。
+
+转发位置 
+在配置文件中添加信息 forward-socks5 / 127.0.0.1:1080 . 这一行的意思是将上一步8118端口监听到的请求转发到1080端口，然后由shadowsocks通过socks方式进行处理 * 注意：末尾的”.”符号不能丢掉，否则会报参数缺失错误*
+
+重启privoxy 
+sudo service privoxy restart
+
+
+二：安装环境
+
+1，安装jdk
+a.添加ppa
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+b.安装oracle-java-installer 
+sudo apt-get install oracle-java8-installer
+
+安装器会提示你同意 oracle 的服务条款,选择 ok
+然后选择yes 即可
+
+c.设置系统默认jdk
+sudo update-java-alternatives -s java-8-oracle
+
+d.配置到环境变量中
+vi~/.bashrc
+export PATH=/usr/bin/java:$PATH
+
+
+
+2，gclient
+a.安装： git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+
+b.配置到环境变量中
+vi~/.bashrc
+export PATH="$PATH":/home/hualin/work/webrtc/webrtc/depot_tools
+
+
+3 安装如下工具 ( sudo apt-get install ..)
+
+g++ python libnss3-dev libasound2-dev libpulse-dev libjpeg62-dev libxv-dev libgtk2.0-dev libexpat1-dev
+
+For 32-bit builds on a 64-bit system:
+lib32asound2-dev
+ia32-libs
+
+
+三：源码下载
+1.创建WebRTC目录
+
+mkdir WebRTC
+
+cd WebRTC
+
+2.初始化gclient
+
+gclient config https://webrtc.googlesource.com/src
+
+3. 设计目标系统版本的配置
+
+echo "target_os = ['linux']" >> .gclient
+
+4. sync代码
+
+gclient sync --nohooks
+
+
+四：安装编译依赖
+1，sudo ./src/build/install-build-deps.sh
+
+2，下载编译所需的build文件等信息
+ gclient runhooks --force,
+
+
+3，生成ninja项目文件
+需要进入webrtc-checkout/src目录下来执行相关命令。
+
+生成debug版ninja项目文件：
+gn gen out/Default
+
+生成release版ninja项目文件：
+gn gen out/Default --args='is_debug=false'
+
+要清空ninja项目文件：
+gn clean out/Default
+
+
+4，编译 (src目录下)
+编译Debug版：  ninja -C out/Default
+编译Release版： ninja -C out/Release 
+
+clean：ninja -C out/Debug -t clean
+
